@@ -1,0 +1,215 @@
+# $Id: splash.pot,v 1.1.2.1 2008/07/28 16:41:27 seals Exp $
+#
+# LANGUAGE translation of Drupal (splash)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  splash.admin.inc: n/a
+#  splash.module,v 1.8 2008/03/18 12:47:14 fokke
+#  splash.info,v 1.2 2008/02/09 17:11:43 fokke
+#  splash.install: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Splash 6.x\n"
+"POT-Creation-Date: 2008-04-05 18:57+0200\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: splash.admin.inc:8
+msgid "Settings"
+msgstr ""
+
+#: splash.admin.inc:12
+msgid "Display with frequency"
+msgstr ""
+
+#: splash.admin.inc:15
+msgid "Never (off)"
+msgstr ""
+
+#: splash.admin.inc:16
+msgid "Always"
+msgstr ""
+
+#: splash.admin.inc:17
+msgid "Once"
+msgstr ""
+
+#: splash.admin.inc:18
+msgid "Daily"
+msgstr ""
+
+#: splash.admin.inc:19
+msgid "Weekly"
+msgstr ""
+
+#: splash.admin.inc:21
+msgid "How often should visitors see the splash page?"
+msgstr ""
+
+#: splash.admin.inc:25
+msgid "Display on next visit"
+msgstr ""
+
+#: splash.admin.inc:26
+msgid "Reset the name of the cookie to force the display of the splash on next visit."
+msgstr ""
+
+#: splash.admin.inc:28
+msgid "No"
+msgstr ""
+
+#: splash.admin.inc:29
+msgid "Yes"
+msgstr ""
+
+#: splash.admin.inc:47
+msgid "Reset to defaults"
+msgstr ""
+
+#: splash.admin.inc:50
+msgid "The configuration options have been reset to their default values."
+msgstr ""
+
+#: splash.admin.inc:67
+msgid "The configuration options have been saved."
+msgstr ""
+
+#: splash.admin.inc:82
+msgid "Content mode"
+msgstr ""
+
+#: splash.admin.inc:84
+msgid "Pick random path or URL from the list"
+msgstr ""
+
+#: splash.admin.inc:85
+msgid "Pick next path or URL from the list"
+msgstr ""
+
+#: splash.admin.inc:86
+msgid "Display entered text in the site template"
+msgstr ""
+
+#: splash.admin.inc:87
+msgid "Display entered text/HTML full screen"
+msgstr ""
+
+#: splash.admin.inc:90
+msgid "Determines how the content field below will be used."
+msgstr ""
+
+#: splash.admin.inc:95
+msgid "Content"
+msgstr ""
+
+#: splash.admin.inc:97
+msgid "Text to show or paths/URLs (one on each line) to use."
+msgstr ""
+
+#: splash.admin.inc:119
+msgid "Redirect"
+msgstr ""
+
+#: splash.admin.inc:120
+msgid "Open in new window"
+msgstr ""
+
+#: splash.admin.inc:121
+msgid "Open in ThickBox"
+msgstr ""
+
+#: splash.admin.inc:130
+msgid "Display mode"
+msgstr ""
+
+#: splash.admin.inc:133
+msgid "Redirect to the splash page, open it in a new window or in a fancy !thickbox."
+msgstr ""
+
+#: splash.admin.inc:133 splash.module:207
+msgid "ThickBox"
+msgstr ""
+
+#: splash.admin.inc:137
+msgid "Window/Box size"
+msgstr ""
+
+#: splash.admin.inc:139
+msgid "Size (<code>WIDTHxHEIGHT</code>, e.g. 400x300) of the window or ThickBox."
+msgstr ""
+
+#: splash.admin.inc:148
+msgid "Invalid Window/Box size. Use <code>WIDTHxHEIGHT</code>, e.g. 400x300."
+msgstr ""
+
+#: splash.module:9;18 splash.info:0
+msgid "Splash"
+msgstr ""
+
+#: splash.module:10
+msgid "Splash page before the actual frontpage."
+msgstr ""
+
+#: splash.module:19
+msgid "Show a splash page before/over the actual frontpage."
+msgstr ""
+
+#: splash.module:26
+msgid "When"
+msgstr ""
+
+#: splash.module:27
+msgid "Set WHEN the splash page is displayed."
+msgstr ""
+
+#: splash.module:32
+msgid "What"
+msgstr ""
+
+#: splash.module:33
+msgid "Set WHAT is displayed as the splash page."
+msgstr ""
+
+#: splash.module:38
+msgid "How"
+msgstr ""
+
+#: splash.module:39
+msgid "Set HOW the splash page is displayed."
+msgstr ""
+
+#: splash.module:203
+msgid "Install the !condition module to add additional conditions for displaying the splash page. Please note that the splash page is never displayed in the following conditions: <ul><li>The requested page is not the front page.</li><li>The visitor returns to the frontpage from another page on the same site.</li><li>The splash page is the same as the front page.</li><li>The visitors added <code>?nosplash</code> to the URL.</li></ul>"
+msgstr ""
+
+#: splash.module:203
+msgid "Condition"
+msgstr ""
+
+#: splash.module:205
+msgid "What will be displayed as splash page? You can enter multiple internal paths or full URLs to pick from either in random or in sequence mode. Or enter some text and choose if should be displayed in the site template or full screen."
+msgstr ""
+
+#: splash.module:207
+msgid "By default, the visitor is redirected to the splash page. In that case, please remember to include a link to the frontpage on the splash page. But you can also open the page in a new window (blocked by some browsers and plug-ins) or (if you have it installed) use the fancy !thickbox."
+msgstr ""
+
+#: splash.module:0
+msgid "splash"
+msgstr ""
+
+#: splash.install:23
+msgid "Splash - Install the conditions module to trigger the display by the PHP code you had set: %code"
+msgstr ""
+
+#: splash.info:0
+msgid "Allows to show a splash page on first, daily or weekly visit."
+msgstr ""
+

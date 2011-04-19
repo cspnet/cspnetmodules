@@ -1,0 +1,11 @@
+name = Condition Requirements
+description = Provides simple requirements (e.g. PHP code or page filter) for the Conditions module.
+package = Conditions
+dependencies[] = condition
+core = 6.x
+; Information added by drupal.org packaging script on 2008-04-17
+version = "6.x-2.5"
+core = "6.x"
+project = "condition"
+datestamp = "1208404805"
+

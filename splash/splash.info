@@ -1,0 +1,10 @@
+;$Id: splash.info,v 1.2 2008/02/09 17:11:43 fokke Exp $
+name = Splash
+description = Allows to show a splash page on first, daily or weekly visit.
+core = 6.x
+; Information added by drupal.org packaging script on 2010-08-19
+version = "6.x-2.6"
+core = "6.x"
+project = "splash"
+datestamp = "1282248392"
+

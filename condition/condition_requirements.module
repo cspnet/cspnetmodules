@@ -1,0 +1,227 @@
+<?php
+
+/**
+* Implementation of a Condition Requirement.
+*/
+function condition_requirements_requirement_info() {
+  return array(
+    'condition_requirements_php' => array(
+      'name' => t('PHP code'),
+      'description' => t('Validates if the following PHP code returns <code>TRUE</code> (PHP-mode, experts only).'),
+    ),
+    'condition_requirements_pages' => array(
+      'name' => t('Pages'),
+      'description' => t('Validates (not) on a selection of pages.'),
+    ),
+    'condition_requirements_sites' => array(
+      'name' => t('Sites'),
+      'description' => t('Validates (not) on a selection of site configurations.'),
+    ),
+    'condition_requirements_hostname' => array(
+      'name' => t('Hostname'),
+      'description' => t('Validates (not) on a selection of site hostnames.'),
+    ),
+	);
+}
+
+/***********************************************************************************
+* Implementation of a Condition Requirement.
+* PHP Code.
+*/
+function condition_requirements_php_form($context) {
+	$form['php_code'] = array(
+		'#type' => 'textarea',
+		'#title' => t('PHP Code'),
+		'#description' => t('Enter PHP code between <em>&lt;?php ?&gt;</em>. Note that executing incorrect PHP-code can break your Drupal site.'),
+		'#default_value' => $context['code'],
+	);
+	
+	return $form;
+}
+
+/**
+* Submit: Implementation of a Condition Requirement.
+* PHP Code.
+*/
+function condition_requirements_php_form_submit($form, &$form_state) {
+	
+	if ($form_state['values']['php_code']) {
+		return array('code' => $form_state['values']['php_code']);
+	}
+}
+
+/**
+* Execute: Implementation of a Condition Requirement.
+* PHP Code.
+*/
+function condition_requirements_php(&$condition, $context = array()) {
+	return (!$context['code'] || drupal_eval($context['code']));
+}
+
+/***********************************************************************************
+* Implementation of a Condition Requirement.
+* Pages.
+*/
+function condition_requirements_pages_form($context) {
+	$form['pages_operator'] = array(
+		'#type' => 'radios',
+		'#title' => t('Validate'),
+		'#options' => array(
+			'' => t("Always (skip requirement)"),
+			CONDITION_NONE => t('Except on the listed pages.'),
+			CONDITION_ANY => t('Only on the listed pages.'),
+		),
+		'#default_value' => $context['operator'],
+	);
+	$form['pages_pages'] = array(
+		'#type' => 'textarea',
+		'#title' => t('Pages'),
+		'#description' => t('Enter one page per line as Drupal paths. The '*' character is a wildcard. Example paths are <em>blog</em> for the blog page and <em>blog/*</em> for every personal blog. <em>&lt;front&gt;</em> is the front page.'),
+		'#default_value' => $context['pages'],
+	);
+	
+	return $form;
+}
+
+/**
+* Submit: Implementation of a Condition Requirement.
+* Pages.
+*/
+function condition_requirements_pages_form_submit($form, &$form_state) {
+	
+	if ($form_state['values']['pages_operator'] && $form_state['values']['pages_pages']) {
+		return array(
+			'operator' => $form_state['values']['pages_operator'],
+			'pages' => $form_state['values']['pages_pages'],
+		);
+	}
+}
+
+/**
+* Execute: Implementation of a Condition Requirement.
+* Pages.
+*/
+function condition_requirements_pages(&$condition, $context = array()) {
+	$alias = drupal_get_path_alias($_GET['q']);
+	
+	return ($context['operator'] == CONDITION_NONE xor (drupal_match_path($alias, $context['pages']) || ($_GET['q'] != $alias && drupal_match_path($_GET['q'], $context['pages']))));
+}
+
+/***********************************************************************************
+* Implementation of a Condition Requirement.
+* Sites.
+*/
+function condition_requirements_sites_form($context) {
+	$options	= array();
+	$handle		= opendir('./sites');
+	
+	while ($dir = readdir($handle)) {
+		
+		if (is_dir('./sites/'.$dir) && file_exists('./sites/'.$dir.'/settings.php')) {
+			$options[$dir] = (substr(conf_path(), 6) == $dir) ? '<strong>'.$dir.'</strong>' : $dir;
+		}
+	}
+	
+	$form['sites_operator'] = array(
+		'#type' => 'radios',
+		'#title' => t('Validate'),
+		'#options' => array(
+			'' => t("Always (skip requirement)"),
+			CONDITION_NONE => t('Except on the listed sites.'),
+			CONDITION_ANY => t('Only on the listed sites.'),
+		),
+		'#default_value' => $context['operator'],
+	);
+	$form['sites_sites'] = array(
+		'#type' => 'checkboxes',
+		'#title' => t('Sites'),
+		'#options' => $options,
+		'#description' => t('Listed are all Drupal !multisite directories. The currently active is <strong>bold</strong>.', array('!multisite' => l(t('multi-site'), 'http://drupal.org/getting-started/5/install/multi-site', array('attributes' => array('target' => '_blank'))))),
+		'#default_value' => is_array($context['sites']) ? $context['sites'] : array(),
+	);
+	
+	return $form;
+}
+
+/**
+* Submit: Implementation of a Condition Requirement.
+* Sites.
+*/
+function condition_requirements_sites_form_submit($form, &$form_state) {
+	
+	if ($form_state['values']['sites_operator'] && $form_state['values']['sites_sites']) {
+		return array(
+			'operator' => $form_state['values']['sites_operator'],
+			'sites' => array_unique(array_values($form_state['values']['sites_sites'])),
+		);
+	}
+}
+
+/**
+* Execute: Implementation of a Condition Requirement.
+* Sites.
+*/
+function condition_requirements_sites(&$condition, $context = array()) {
+	return ($context['operator'] == CONDITION_NONE xor in_array(substr(conf_path(), 6), $context['sites']));
+}
+
+/***********************************************************************************
+* Implementation of a Condition Requirement.
+* Hostname.
+*/
+function condition_requirements_hostname_form($context) {
+	
+	$form['hostname_operator'] = array(
+		'#type' => 'radios',
+		'#title' => t('Validate'),
+		'#options' => array(
+			'' => t("Always (skip requirement)"),
+			CONDITION_NONE => t('Except on the listed hostnames.'),
+			CONDITION_ANY => t('Only on the listed hostnames.'),
+		),
+		'#default_value' => $context['operator'],
+	);
+	$form['hostname_hostnames'] = array(
+		'#type' => 'textarea',
+		'#title' => t('Hostnames'),
+		'#default_value' => $context['hostnames'],
+		'#description' => t('Enter one or more (partial) hostnames (one on each line), e.g. <code>example.com</code>'),
+	);
+	
+	return $form;
+}
+
+/**
+* Submit: Implementation of a Condition Requirement.
+* Hostname.
+*/
+function condition_requirements_hostname_form_submit($form, &$form_state) {
+	
+	if ($form_state['values']['hostname_operator'] && $form_state['values']['hostname_hostnames']) {
+		
+		return array(
+			'operator' => $form_state['values']['hostname_operator'],
+			'hostnames' => $form_state['values']['hostname_hostnames'],
+		);
+	}
+}
+
+/**
+* Execute: Implementation of a Condition Requirement.
+* Hostname.
+*/
+function condition_requirements_hostname(&$condition, $context = array()) {	
+	$hostnames = preg_split('/[\r\n]+/', $context['hostnames']);
+	$found = FALSE;
+	
+	foreach ($hostnames as $hostname) {
+		
+		if (stristr($_SERVER['HTTP_HOST'], $hostname)) {
+			$found = TRUE;
+		}
+	}
+	
+	return ($context['operator'] == CONDITION_NONE xor $found);
+}
+
+?>

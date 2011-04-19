@@ -1,0 +1,329 @@
+<?php
+// $Id: condition.module,v 1.13 2008/04/17 03:54:42 fokke Exp $
+
+/* 2DO
+ - Module die conditional block visibility doet
+ - Disablen conditions werkend maken
+ - Keuze of condition TRUE is bij geen, een of alle requirements OK
+ */
+
+define('CONDITION_ANY',			1);
+define('CONDITION_ALL',			2);
+define('CONDITION_NOT_ALL',	3);
+define('CONDITION_NEVER',		4);
+define('CONDITION_ALWAYS',	5); 
+define('CONDITION_NOT_ANY',	6);
+
+/**
+* Implementation of hook_menu().
+*/
+function condition_menu() {
+	$items['admin/settings/condition'] = array(
+		'title' => 'Conditions',
+		'description' => 'Configure conditions other modules use to trigger actions.',
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('condition_list_form'),
+		'access arguments' => array('administer conditions'),
+		'file' => 'condition.admin.inc',
+	);
+	$items['admin/settings/condition/list'] = array(
+    'title' => t('List'),
+    'weight' => -10,
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+  );
+	$items['admin/settings/condition/add'] = array(
+    'title' => t('Add'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('condition_edit_form'),
+    'access arguments' => array('administer conditions'),
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'condition.admin.inc',
+  );
+	$items['admin/settings/condition/%condition/edit'] = array(
+    'title' => t('Edit'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('condition_edit_form', 3),
+    'access arguments' => array('administer conditions'),
+    'type' => MENU_CALLBACK,
+    'file' => 'condition.admin.inc',
+  );
+	$items['admin/settings/condition/%condition/delete'] = array(
+    'title' => t('Delete'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('condition_delete_form', 3),
+    'access arguments' => array('administer conditions'),
+    'type' => MENU_CALLBACK,
+    'file' => 'condition.admin.inc',
+  );
+
+  return $items;
+}
+
+/**
+* Implementation of hook_perm().
+*/
+function condition_perm() {
+  return array('administer conditions');
+}
+
+/**
+* Implementation of hook_theme().
+*/
+function condition_theme() {
+  return array(
+    'condition_edit_form' => array('arguments' => array('form' => NULL)),
+    'condition_list_form' => array('arguments' => array('form' => NULL)),
+  );
+}
+
+/**
+* Implementation of hook_help().
+*/
+function condition_help($path, $arg) {
+  switch ($path) {
+    case 'admin/settings/condition':
+      return '<p>'.t('Conditions are sets of requirements that make the condition met (<em>TRUE</em>) or not (<em>FALSE</em>). Other modules can provide requirements (e.g. requested path is <em>admin/*</em>) or use the Condition API to trigger some kind of action (e.g. switch theme to <em>Garland</em>) in case a condition is met. Start by !adding a condition.', array('!adding' => l(t('adding'), 'admin/settings/condition/add'))).'</p>';
+  }
+}
+
+/**
+* Loading one, more or all conditions.
+*/
+function condition_load($cid = NULL) {
+	static $conditions;
+	
+	if (!is_array($conditions)) {
+	
+		if (is_numeric($cid)) {
+			$condition = db_fetch_object(db_query("SELECT * FROM {conditions} WHERE cid = %d", $cid));
+			$condition->parameters = (array) unserialize($condition->parameters);
+			return $condition;
+			
+		} else {
+			$result	= db_query("SELECT * FROM {conditions} ORDER BY weight ASC");
+			$conditions	= array();
+			
+			while ($condition = db_fetch_object($result)) {
+				$condition->parameters = (array) unserialize($condition->parameters);
+				$conditions[$condition->cid] = $condition;
+			}
+		}
+	}
+		
+	if (is_array($conditions)) {
+		
+		if (is_numeric($cid)) {
+			return $conditions[$cid];
+			
+		} elseif (is_array($cid)) {
+			return array_intersect_key($conditions, array_flip($cid));
+			
+		} else {		
+			return $conditions;
+		}		
+	}
+}
+
+/**
+* Saving one or more conditions.
+*/
+function condition_save($condition) {
+	
+	if (is_array($condition)) {
+		
+		foreach (array_keys($condition) as $key) {
+			$condition[$key]->saved = condition_save($condition[$key]);
+		}
+		
+		return $condition;
+	}
+	
+	if ($condition->parameters) {
+		$condition->parameters = serialize((array) $condition->parameters);
+	}
+
+	return drupal_write_record('conditions', $condition, $condition->cid ? 'cid' : array());
+}
+
+/**
+* Deleting one or more conditions.
+*/
+function condition_delete($condition) {
+	
+	if (is_array($condition)) {
+		
+		foreach (array_keys($condition) as $key) {
+			$condition[$key]->deleted = condition_delete($condition[$key]);
+		}
+		
+		return $condition;
+	}
+	
+	if (!is_object($condition)) {
+		$condition = condition_load($condition);
+	}
+	
+	return db_query("DELETE FROM {conditions} WHERE cid = %d", $condition->cid);
+}
+
+/**
+* Validating a condition.
+*/
+function condition_validate($condition) {
+	static $validations;
+
+	if (is_array($validations) && isset($validations[$condition->cid])) {
+		return $validations[$condition->cid];
+	}
+	
+	if (!$condition->status) {
+		return $validations[$condition->cid] = FALSE;
+	}
+		
+	$requirements	= module_invoke_all('requirement_info');
+	$valid				= TRUE;
+	
+	if (is_array($requirements) && count($requirements)) {
+		
+		foreach ($requirements as $requirement => $info) {
+
+			if ($condition->parameters[$requirement]) {
+
+				if ($requirement($condition, $condition->parameters[$requirement]) === FALSE) {
+					$valid = FALSE;
+					break;
+				}
+			}
+		}
+	}
+	
+	$validations[$condition->cid] = $valid;
+		
+	return $valid;
+}
+
+/*
+* Selecting conditions for some other module.
+*/
+function condition_selection_form($context) {	
+	$conditions = condition_load();
+	
+	// We might get just the values instead of the form_state.
+	if ($form_state['conditions']) {
+		$form_state['values'] = $form_state;
+	}	
+	
+	$form['conditions'] = array(
+		'#type' => 'fieldset', 
+		'#title' => t('Conditions'),
+		'#description' => t('Restrict to situations where selected conditions (do not) validate.'),
+		'#collapsible' => TRUE,
+		'#collapsed' => isset($context['selection']),
+		'#tree' => TRUE,
+	);
+	$form['conditions']['operator'] = array(
+		'#type' => 'select',
+		'#title' => 'Criteria',
+		'#options' => array(
+			CONDITION_NEVER => t("NEVER validate"),
+			CONDITION_ALWAYS => t("ALWAYS validate"),
+			CONDITION_ANY => t('When ANY selected condition is met'),
+			CONDITION_ALL => t('When ALL selected conditions are met'),
+			CONDITION_NOT_ANY => t('When ANY selected condition is NOT met'),
+			CONDITION_NOT_ALL => t('When ALL selected conditions are NOT met'),			
+		),
+		'#default_value' => $context['operator'],
+	);
+	
+	if (count($conditions)) {
+		$form['conditions']['selection'] = array(
+			'#type' => 'checkboxes',
+			'#title' => t('Conditions'),
+			'#options' => array(),
+			'#default_value' => (array) $context['selection'],
+		);
+		
+		foreach ($conditions as $condition) {
+			$form['conditions']['selection']['#options'][$condition->cid] = $condition->name.' ('.l(t('edit'), 'admin/settings/condition/'.$condition->cid.'/edit').')';
+		}
+		
+	} else {
+		$form['conditions']['selection'] = array(
+			'#type' => 'item',
+			'#title' => t('Conditions'),
+			'#value' => t('!Add a condition first.', array('!Add' => l(t('Add'), 'admin/settings/condition/add'))),
+		);
+		
+	}
+	
+	return $form;
+}
+
+/*
+* Submit: Selecting conditions for some other module.
+*/
+function condition_selection_submit($form, $form_state) {
+  return array(
+  	'operator' => (int) $form_state['values']['conditions']['operator'],
+  	'selection' => $form_state['values']['conditions']['selection'],
+  );
+}
+
+/*
+* Validating a selection of conditions for some other module.
+*/
+function condition_selection_validate($parameters) {
+
+	// We might get all form values instead of just ours.
+	if ($parameters['conditions']) {
+		$parameters = $parameters['conditions'];
+	}
+	
+	// Invalid parameters = FALSE
+	if (!$parameters['operator'] || !is_array($parameters['selection'])) {
+		return FALSE;
+	}
+	
+	$parameters['operator'] = intval($parameters['operator']);
+	
+	// Disabled and FALSE
+	if ($parameters['operator'] == CONDITION_NEVER) {
+		return FALSE;
+	}
+	
+	// Disabled and TRUE
+	if ($parameters['operator'] == CONDITION_ALWAYS) {
+		return TRUE;
+	}
+		
+	$cids = array_filter($parameters['selection'], 'intval');
+	$conditions	= condition_load($cids);
+	$valid = 0;
+	
+	foreach ($conditions as $condition) {
+
+		if (condition_validate($condition)) {
+			$valid++;
+		}
+	}
+
+	switch ($parameters['operator']) {
+		
+		case CONDITION_ANY:
+			return ($valid > 0);
+			
+		case CONDITION_ALL:
+			return ($valid == count($conditions));
+			
+		case CONDITION_NOT_ANY:
+			return ($valid != count($conditions));
+			
+		case CONDITION_NOT_ALL:
+			return ($valid == 0);
+			
+		default:
+			return FALSE;
+	}
+}
+
+?>

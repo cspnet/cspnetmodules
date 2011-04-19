@@ -1,0 +1,219 @@
+# $Id: sv.po,v 1.1.2.1 2008/07/28 16:41:27 seals Exp $
+#
+# LANGUAGE translation of Drupal (splash)
+# Copyright 2008 Magnus Gunnarsson <seals@passagen.se>
+# Generated from files:
+#  splash.admin.inc: n/a
+#  splash.module,v 1.8 2008/03/18 12:47:14 fokke
+#  splash.info,v 1.2 2008/02/09 17:11:43 fokke
+#  splash.install: n/a
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Splash 6.x\n"
+"POT-Creation-Date: 2008-04-05 18:58+0200\n"
+"PO-Revision-Date: 2008-04-05 19:51+0100\n"
+"Last-Translator: Magnus Gunnarsson <seals@passagen.se>\n"
+"Language-Team: drupalsverige.se\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Poedit-Language: Swedish\n"
+"X-Poedit-Country: SWEDEN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: splash.admin.inc:8
+msgid "Settings"
+msgstr "Inställningar"
+
+#: splash.admin.inc:12
+msgid "Display with frequency"
+msgstr "Visa med återkommande intervall"
+
+#: splash.admin.inc:15
+msgid "Never (off)"
+msgstr "Aldrig (avstängd)"
+
+#: splash.admin.inc:16
+msgid "Always"
+msgstr "Alltid"
+
+#: splash.admin.inc:17
+msgid "Once"
+msgstr "En gång"
+
+#: splash.admin.inc:18
+msgid "Daily"
+msgstr "Dagligen"
+
+#: splash.admin.inc:19
+msgid "Weekly"
+msgstr "Veckovis"
+
+#: splash.admin.inc:21
+msgid "How often should visitors see the splash page?"
+msgstr "Hur ofta skall besökare se poppuppsidan?"
+
+#: splash.admin.inc:25
+msgid "Display on next visit"
+msgstr "Visa vid nästa besök"
+
+#: splash.admin.inc:26
+msgid "Reset the name of the cookie to force the display of the splash on next visit."
+msgstr "Återställ namnet på kakan (cookie) för att framtvinga visningen av poppuppfönstret vid nästa besök."
+
+#: splash.admin.inc:28
+msgid "No"
+msgstr "Nej"
+
+#: splash.admin.inc:29
+msgid "Yes"
+msgstr "Ja"
+
+#: splash.admin.inc:47
+msgid "Reset to defaults"
+msgstr "Återställ till standardvärden"
+
+#: splash.admin.inc:50
+msgid "The configuration options have been reset to their default values."
+msgstr "Inställningarna har återställts till sina standardvärden."
+
+#: splash.admin.inc:67
+msgid "The configuration options have been saved."
+msgstr "Inställningarna har sparats."
+
+#: splash.admin.inc:82
+msgid "Content mode"
+msgstr "Stil för innehåll"
+
+#: splash.admin.inc:84
+msgid "Pick random path or URL from the list"
+msgstr "Välj en slumpmässig sökväg eller webbadress från listan."
+
+#: splash.admin.inc:85
+msgid "Pick next path or URL from the list"
+msgstr "Välj nästa sökväg eller webbadress från listan."
+
+#: splash.admin.inc:86
+msgid "Display entered text in the site template"
+msgstr "Visa angiven text i webbplatsen mall."
+
+#: splash.admin.inc:87
+msgid "Display entered text/HTML full screen"
+msgstr "Visa angiven text/HTML i helskärmsläge"
+
+#: splash.admin.inc:90
+msgid "Determines how the content field below will be used."
+msgstr "Undersöker hur innehållet i fältet nedan skall användas."
+
+#: splash.admin.inc:95
+msgid "Content"
+msgstr "Innehåll"
+
+#: splash.admin.inc:97
+msgid "Text to show or paths/URLs (one on each line) to use."
+msgstr "Text som skall visas eller sökväg/webbadress(er) (en på varje rad)."
+
+#: splash.admin.inc:119
+msgid "Redirect"
+msgstr "Omdirigera"
+
+#: splash.admin.inc:120
+msgid "Open in new window"
+msgstr "Öppna i ett nytt fönster"
+
+#: splash.admin.inc:121
+msgid "Open in ThickBox"
+msgstr "Öppna i ThickBox"
+
+#: splash.admin.inc:130
+msgid "Display mode"
+msgstr "Visningsstil"
+
+#: splash.admin.inc:133
+msgid "Redirect to the splash page, open it in a new window or in a fancy !thickbox."
+msgstr "Omdirigera till poppuppsidan, öppna det i ett nytt fönster eller i en smidig !thickbox."
+
+#: splash.admin.inc:133
+#: splash.module:207
+msgid "ThickBox"
+msgstr "ThickBox"
+
+#: splash.admin.inc:137
+msgid "Window/Box size"
+msgstr "Storlek på Fönster/Ruta"
+
+#: splash.admin.inc:139
+msgid "Size (<code>WIDTHxHEIGHT</code>, e.g. 400x300) of the window or ThickBox."
+msgstr "Storlek (<code>BREDDxHÖJD</code>, till exempel 400x300) av fönstret eller ThickBox."
+
+#: splash.admin.inc:148
+msgid "Invalid Window/Box size. Use <code>WIDTHxHEIGHT</code>, e.g. 400x300."
+msgstr "Ogiltig storlek på Fönster/Ruta. Använd <code>BREDDxHÖJD</code>, till exempel 400x300."
+
+#: splash.module:9;18
+#: splash.info:0
+msgid "Splash"
+msgstr "Poppupp"
+
+#: splash.module:10
+msgid "Splash page before the actual frontpage."
+msgstr "Poppuppsida före den egentliga startsidan."
+
+#: splash.module:19
+msgid "Show a splash page before/over the actual frontpage."
+msgstr "Visa en poppuppsida före/över den egentliga startsidan."
+
+#: splash.module:26
+msgid "When"
+msgstr "När"
+
+#: splash.module:27
+msgid "Set WHEN the splash page is displayed."
+msgstr "Ställ in NÄR poppuppsidan skall visas."
+
+#: splash.module:32
+msgid "What"
+msgstr "Vad"
+
+#: splash.module:33
+msgid "Set WHAT is displayed as the splash page."
+msgstr "Ställ in VAD som skall visas på poppuppsidan."
+
+#: splash.module:38
+msgid "How"
+msgstr "Hur"
+
+#: splash.module:39
+msgid "Set HOW the splash page is displayed."
+msgstr "Ställ in HUR poppuppsidan skall visas."
+
+#: splash.module:203
+msgid "Install the !condition module to add additional conditions for displaying the splash page. Please note that the splash page is never displayed in the following conditions: <ul><li>The requested page is not the front page.</li><li>The visitor returns to the frontpage from another page on the same site.</li><li>The splash page is the same as the front page.</li><li>The visitors added <code>?nosplash</code> to the URL.</li></ul>"
+msgstr "Installera modulen !condition (Conditions) för att lägga till ytterligare villkor för att visa poppuppsidan. OBS! att poppuppsidan aldrig visas under följande villkor: <ul><li>Den begärda sidan är inte startsidan.</li><li>Besökarna återvänder till startsidan från en annan sida inom samma webbplats.</li><li>Poppuppsidan är densamma som startsidan.</li><li>Besökarna lade till <code>?nosplash</code> till webbadressen.<li></ul>"
+
+#: splash.module:203
+msgid "Condition"
+msgstr "Villkor"
+
+#: splash.module:205
+msgid "What will be displayed as splash page? You can enter multiple internal paths or full URLs to pick from either in random or in sequence mode. Or enter some text and choose if should be displayed in the site template or full screen."
+msgstr "Vad skall visas som poppuppsida? Du kan ange flera interna sökvägar eller en fullständig webbadress som väljs antingen slumpmässigt eller i en sekventiell ordning. Eller så kan du ange någon text och välja om den skall visas i webbplatsen mall eller helskärmsläge."
+
+#: splash.module:207
+msgid "By default, the visitor is redirected to the splash page. In that case, please remember to include a link to the frontpage on the splash page. But you can also open the page in a new window (blocked by some browsers and plug-ins) or (if you have it installed) use the fancy !thickbox."
+msgstr "Som standard vidarebefordras besökare till poppuppsidan. I det fallet, glöm inte att inkludera en länk till startsidan på poppuppsidan. Du kan också öppna sidan i ett nytt fönster (blockerat av några webbläsare och insticksprogram) eller (om du redan har det installerat) använd det trevliga !thickbox."
+
+#: splash.module:0
+msgid "splash"
+msgstr "splash"
+
+#: splash.install:23
+msgid "Splash - Install the conditions module to trigger the display by the PHP code you had set: %code"
+msgstr "Poppupp (Splash) - installerar villkoren för modulen så att de utlöser visningen genom koden i PHP du har angivit: %code"
+
+#: splash.info:0
+msgid "Allows to show a splash page on first, daily or weekly visit."
+msgstr "Låter dig visa en poppuppsida på första, dagliga eller veckovisa besöket."
+

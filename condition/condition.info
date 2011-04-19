@@ -1,0 +1,11 @@
+; $Id: condition.info,v 1.3 2008/02/14 09:28:56 fokke Exp $
+name = Conditions
+description = Conditions are sets of requirements that make the condition met or not. Other modules can use this to provide conditional actions.
+package = Conditions
+core = 6.x
+; Information added by drupal.org packaging script on 2008-04-17
+version = "6.x-2.5"
+core = "6.x"
+project = "condition"
+datestamp = "1208404805"
+
