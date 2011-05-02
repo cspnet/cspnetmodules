@@ -6,6 +6,132 @@
 function op_article_content_default_fields() {
   $fields = array();
 
+  // Exported field: field_articlespotlight
+  $fields['article-field_articlespotlight'] = array(
+    'field_name' => 'field_articlespotlight',
+    'type_name' => 'article',
+    'display_settings' => array(
+      'weight' => '27',
+      'parent' => 'group_articleclassification',
+      'label' => array(
+        'format' => 'above',
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'content_taxonomy',
+    'required' => '0',
+    'multiple' => '1',
+    'module' => 'content_taxonomy',
+    'active' => '1',
+    'save_term_node' => 1,
+    'vid' => '45',
+    'parent' => '0',
+    'parent_php_code' => '',
+    'depth' => '',
+    'widget' => array(
+      'group_parent' => '0',
+      'show_depth' => 1,
+      'default_value' => array(
+        '0' => array(
+          'value' => '',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Article Spotlight',
+      'weight' => '27',
+      'description' => '',
+      'type' => 'content_taxonomy_options',
+      'module' => 'content_taxonomy_options',
+    ),
+  );
+
+  // Exported field: field_catspecific_articles
+  $fields['article-field_catspecific_articles'] = array(
+    'field_name' => 'field_catspecific_articles',
+    'type_name' => 'article',
+    'display_settings' => array(
+      'weight' => '24',
+      'parent' => 'group_catspecific_newsletters',
+      'label' => array(
+        'format' => 'inline',
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'content_taxonomy',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'content_taxonomy',
+    'active' => '1',
+    'save_term_node' => 1,
+    'vid' => '56',
+    'parent' => '0',
+    'parent_php_code' => '',
+    'depth' => '',
+    'widget' => array(
+      'group_parent' => '0',
+      'show_depth' => 1,
+      'default_value' => array(
+        '0' => array(
+          'value' => '',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Category Analysis Placement',
+      'weight' => '24',
+      'description' => '',
+      'type' => 'content_taxonomy_options',
+      'module' => 'content_taxonomy_options',
+    ),
+  );
+
   // Exported field: field_deck
   $fields['article-field_deck'] = array(
     'field_name' => 'field_deck',
@@ -13,10 +139,6 @@ function op_article_content_default_fields() {
     'display_settings' => array(
       'weight' => '-4',
       'parent' => '',
-      '4' => array(
-        'format' => 'default',
-        'exclude' => 1,
-      ),
       'label' => array(
         'format' => 'above',
       ),
@@ -27,6 +149,10 @@ function op_article_content_default_fields() {
       'full' => array(
         'format' => 'default',
         'exclude' => 1,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
       ),
       '2' => array(
         'format' => 'default',
@@ -69,17 +195,329 @@ function op_article_content_default_fields() {
     ),
   );
 
+  // Exported field: field_dnews_catplacement
+  $fields['article-field_dnews_catplacement'] = array(
+    'field_name' => 'field_dnews_catplacement',
+    'type_name' => 'article',
+    'display_settings' => array(
+      'weight' => '22',
+      'parent' => 'group_dnewsplacement',
+      'label' => array(
+        'format' => 'above',
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'content_taxonomy',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'content_taxonomy',
+    'active' => '1',
+    'save_term_node' => 1,
+    'vid' => '54',
+    'parent' => '0',
+    'parent_php_code' => '',
+    'depth' => '',
+    'widget' => array(
+      'group_parent' => '0',
+      'show_depth' => 1,
+      'default_value' => array(
+        '0' => array(
+          'value' => '',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Category Placement',
+      'weight' => '22',
+      'description' => '',
+      'type' => 'content_taxonomy_options',
+      'module' => 'content_taxonomy_options',
+    ),
+  );
+
+  // Exported field: field_editorial_tags
+  $fields['article-field_editorial_tags'] = array(
+    'field_name' => 'field_editorial_tags',
+    'type_name' => 'article',
+    'display_settings' => array(
+      'weight' => '25',
+      'parent' => 'group_internal_tagging',
+      'label' => array(
+        'format' => 'above',
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'content_taxonomy',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'content_taxonomy',
+    'active' => '1',
+    'save_term_node' => 1,
+    'vid' => '49',
+    'parent' => '0',
+    'parent_php_code' => '',
+    'depth' => '',
+    'widget' => array(
+      'group_parent' => '0',
+      'show_depth' => 1,
+      'default_value' => array(
+        '0' => array(
+          'value' => '',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Editorial Tags',
+      'weight' => '25',
+      'description' => 'For internal Editorial tagging usage only',
+      'type' => 'content_taxonomy_options',
+      'module' => 'content_taxonomy_options',
+    ),
+  );
+
+  // Exported field: field_featured_retailers
+  $fields['article-field_featured_retailers'] = array(
+    'field_name' => 'field_featured_retailers',
+    'type_name' => 'article',
+    'display_settings' => array(
+      'weight' => '25',
+      'parent' => 'group_articleclassification',
+      'label' => array(
+        'format' => 'above',
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'content_taxonomy',
+    'required' => '0',
+    'multiple' => '1',
+    'module' => 'content_taxonomy',
+    'active' => '1',
+    'save_term_node' => 1,
+    'vid' => '50',
+    'parent' => '0',
+    'parent_php_code' => '',
+    'depth' => '',
+    'widget' => array(
+      'group_parent' => '0',
+      'show_depth' => 1,
+      'default_value' => array(
+        '0' => array(
+          'value' => NULL,
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Retailer Focus',
+      'weight' => '25',
+      'description' => 'Hold down CTRL to select more than one.',
+      'type' => 'content_taxonomy_select',
+      'module' => 'content_taxonomy_options',
+    ),
+  );
+
+  // Exported field: field_featured_suppliers
+  $fields['article-field_featured_suppliers'] = array(
+    'field_name' => 'field_featured_suppliers',
+    'type_name' => 'article',
+    'display_settings' => array(
+      'weight' => '26',
+      'parent' => 'group_articleclassification',
+      'label' => array(
+        'format' => 'above',
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'content_taxonomy',
+    'required' => '0',
+    'multiple' => '1',
+    'module' => 'content_taxonomy',
+    'active' => '1',
+    'save_term_node' => 1,
+    'vid' => '51',
+    'parent' => '0',
+    'parent_php_code' => '',
+    'depth' => '',
+    'widget' => array(
+      'group_parent' => '0',
+      'show_depth' => 1,
+      'default_value' => array(
+        '0' => array(
+          'value' => '',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Supplier Focus',
+      'weight' => '26',
+      'description' => 'Hold down CTRL to select more than one.',
+      'type' => 'content_taxonomy_select',
+      'module' => 'content_taxonomy_options',
+    ),
+  );
+
+  // Exported field: field_homepage_placement
+  $fields['article-field_homepage_placement'] = array(
+    'field_name' => 'field_homepage_placement',
+    'type_name' => 'article',
+    'display_settings' => array(
+      'weight' => '10',
+      'parent' => '',
+      'label' => array(
+        'format' => 'above',
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'content_taxonomy',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'content_taxonomy',
+    'active' => '1',
+    'save_term_node' => 1,
+    'vid' => '52',
+    'parent' => '0',
+    'parent_php_code' => '',
+    'depth' => '',
+    'widget' => array(
+      'group_parent' => '0',
+      'show_depth' => 1,
+      'default_value' => array(
+        '0' => array(
+          'value' => '',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Home Page Placement',
+      'weight' => '10',
+      'description' => 'Top Story, Feature 1 and Feature 2 articles appear in Top News slideshow. 
+News 1, 2, 3, 4 and up articles appear under Latest News. The higher the number the farther down in the list the article will appear.',
+      'type' => 'content_taxonomy_select',
+      'module' => 'content_taxonomy_options',
+    ),
+  );
+
   // Exported field: field_main_image
   $fields['article-field_main_image'] = array(
     'field_name' => 'field_main_image',
     'type_name' => 'article',
     'display_settings' => array(
-      'weight' => '5',
+      'weight' => '2',
       'parent' => '',
-      '4' => array(
-        'format' => 'default',
-        'exclude' => 1,
-      ),
       'label' => array(
         'format' => 'above',
       ),
@@ -90,6 +528,10 @@ function op_article_content_default_fields() {
       'full' => array(
         'format' => 'default',
         'exclude' => 1,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
       ),
       '0' => array(
         'format' => 'above',
@@ -141,12 +583,12 @@ function op_article_content_default_fields() {
         'imce' => 'imce',
         'reference' => 0,
       ),
-      'filefield_source_autocomplete' => NULL,
       'filefield_source_attach_path' => NULL,
       'filefield_source_attach_absolute' => NULL,
       'filefield_source_attach_mode' => NULL,
+      'filefield_source_autocomplete' => NULL,
       'label' => 'Main Image',
-      'weight' => '4',
+      'weight' => '2',
       'description' => 'Appears at the top of detail pages and as a thumbnail on list pages.',
       'type' => 'imagefield_widget',
       'module' => 'imagefield',
@@ -158,12 +600,8 @@ function op_article_content_default_fields() {
     'field_name' => 'field_main_image_credit',
     'type_name' => 'article',
     'display_settings' => array(
-      'weight' => '7',
+      'weight' => '4',
       'parent' => '',
-      '4' => array(
-        'format' => 'default',
-        'exclude' => 1,
-      ),
       'label' => array(
         'format' => 'above',
       ),
@@ -172,6 +610,10 @@ function op_article_content_default_fields() {
         'exclude' => 1,
       ),
       'full' => array(
+        'format' => 'default',
+        'exclude' => 1,
+      ),
+      '4' => array(
         'format' => 'default',
         'exclude' => 1,
       ),
@@ -209,10 +651,199 @@ function op_article_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Main Image Credit',
-      'weight' => '6',
+      'weight' => '4',
       'description' => '',
       'type' => 'text_textfield',
       'module' => 'text',
+    ),
+  );
+
+  // Exported field: field_mobile_dnewsplacement
+  $fields['article-field_mobile_dnewsplacement'] = array(
+    'field_name' => 'field_mobile_dnewsplacement',
+    'type_name' => 'article',
+    'display_settings' => array(
+      'weight' => '23',
+      'parent' => 'group_dnewsplacement',
+      'label' => array(
+        'format' => 'above',
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'content_taxonomy',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'content_taxonomy',
+    'active' => '1',
+    'save_term_node' => 1,
+    'vid' => '55',
+    'parent' => '0',
+    'parent_php_code' => '',
+    'depth' => '',
+    'widget' => array(
+      'group_parent' => '0',
+      'show_depth' => 1,
+      'default_value' => array(
+        '0' => array(
+          'value' => '',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Mobile Placement',
+      'weight' => '23',
+      'description' => '',
+      'type' => 'content_taxonomy_options',
+      'module' => 'content_taxonomy_options',
+    ),
+  );
+
+  // Exported field: field_newsflash
+  $fields['article-field_newsflash'] = array(
+    'field_name' => 'field_newsflash',
+    'type_name' => 'article',
+    'display_settings' => array(
+      'weight' => '21',
+      'parent' => 'group_articleclassification',
+      'label' => array(
+        'format' => 'above',
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'content_taxonomy',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'content_taxonomy',
+    'active' => '1',
+    'save_term_node' => 1,
+    'vid' => '57',
+    'parent' => '0',
+    'parent_php_code' => '',
+    'depth' => '',
+    'widget' => array(
+      'group_parent' => '0',
+      'show_depth' => 1,
+      'default_value' => array(
+        '0' => array(
+          'value' => '',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'News Flash',
+      'weight' => '21',
+      'description' => 'TIP: News Flashes should only be scheduled to be published for one day. If this is a News Flash do NOT set any placement tagging below this point. Only tag to Section and Publication Source above.',
+      'type' => 'content_taxonomy_options',
+      'module' => 'content_taxonomy_options',
+    ),
+  );
+
+  // Exported field: field_newssection
+  $fields['article-field_newssection'] = array(
+    'field_name' => 'field_newssection',
+    'type_name' => 'article',
+    'display_settings' => array(
+      'weight' => '19',
+      'parent' => 'group_articleclassification',
+      'label' => array(
+        'format' => 'above',
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'content_taxonomy',
+    'required' => '1',
+    'multiple' => '1',
+    'module' => 'content_taxonomy',
+    'active' => '1',
+    'save_term_node' => 1,
+    'vid' => '43',
+    'parent' => '0',
+    'parent_php_code' => '',
+    'depth' => '',
+    'widget' => array(
+      'group_parent' => '0',
+      'show_depth' => 1,
+      'default_value' => array(
+        '0' => array(
+          'value' => NULL,
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Section',
+      'weight' => '19',
+      'description' => '',
+      'type' => 'content_taxonomy_select',
+      'module' => 'content_taxonomy_options',
     ),
   );
 
@@ -221,12 +852,8 @@ function op_article_content_default_fields() {
     'field_name' => 'field_op_author',
     'type_name' => 'article',
     'display_settings' => array(
-      'weight' => '-2',
-      'parent' => '',
-      '4' => array(
-        'format' => 'default',
-        'exclude' => 1,
-      ),
+      'weight' => '1',
+      'parent' => 'group_authoring',
       'label' => array(
         'format' => 'above',
       ),
@@ -235,6 +862,10 @@ function op_article_content_default_fields() {
         'exclude' => 1,
       ),
       'full' => array(
+        'format' => 'default',
+        'exclude' => 1,
+      ),
+      '4' => array(
         'format' => 'default',
         'exclude' => 1,
       ),
@@ -287,69 +918,10 @@ function op_article_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Author(s)',
-      'weight' => '-2',
+      'weight' => '1',
       'description' => '',
       'type' => 'nodereference_autocomplete',
       'module' => 'nodereference',
-    ),
-  );
-
-  // Exported field: field_op_documentcloud_doc
-  $fields['article-field_op_documentcloud_doc'] = array(
-    'field_name' => 'field_op_documentcloud_doc',
-    'type_name' => 'article',
-    'display_settings' => array(
-      'weight' => '2',
-      'parent' => '',
-      '4' => array(
-        'format' => 'default',
-        'exclude' => 1,
-      ),
-      'label' => array(
-        'format' => 'above',
-      ),
-      'teaser' => array(
-        'format' => 'default',
-        'exclude' => 1,
-      ),
-      'full' => array(
-        'format' => 'default',
-        'exclude' => 1,
-      ),
-      '2' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      '3' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      'token' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-    ),
-    'widget_active' => '1',
-    'type' => 'document_cloud_doc',
-    'required' => '0',
-    'multiple' => '1',
-    'module' => 'document_cloud',
-    'active' => '1',
-    'viewer_height' => '600',
-    'viewer_width' => '980',
-    'widget' => array(
-      'default_value' => array(
-        '0' => array(
-          'url' => '',
-          '_error_element' => 'value',
-        ),
-      ),
-      'default_value_php' => NULL,
-      'label' => 'DocumentCloud Document',
-      'weight' => '2',
-      'description' => 'Create a link to a DocumentCloud document and allow users to view it on your site.  Example: http://www.documentcloud.org/documents/<document id>.html.',
-      'type' => 'document_cloud_doc',
-      'module' => 'document_cloud',
     ),
   );
 
@@ -358,12 +930,8 @@ function op_article_content_default_fields() {
     'field_name' => 'field_op_related_mmedia',
     'type_name' => 'article',
     'display_settings' => array(
-      'weight' => '8',
-      'parent' => '',
-      '4' => array(
-        'format' => 'default',
-        'exclude' => 1,
-      ),
+      'weight' => '16',
+      'parent' => 'group_attachments_related',
       'label' => array(
         'format' => 'above',
       ),
@@ -374,6 +942,10 @@ function op_article_content_default_fields() {
       'full' => array(
         'format' => 'default',
         'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 1,
       ),
       '2' => array(
         'format' => 'default',
@@ -424,10 +996,262 @@ function op_article_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Related Multimedia',
-      'weight' => '7',
+      'weight' => '16',
       'description' => '',
       'type' => 'nodereference_autocomplete',
       'module' => 'nodereference',
+    ),
+  );
+
+  // Exported field: field_publishto_cspedia_companie
+  $fields['article-field_publishto_cspedia_companie'] = array(
+    'field_name' => 'field_publishto_cspedia_companie',
+    'type_name' => 'article',
+    'display_settings' => array(
+      'weight' => '22',
+      'parent' => 'group_articleclassification',
+      'label' => array(
+        'format' => 'inline',
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'content_taxonomy',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'content_taxonomy',
+    'active' => '1',
+    'save_term_node' => 1,
+    'vid' => '46',
+    'parent' => '0',
+    'parent_php_code' => '',
+    'depth' => '',
+    'widget' => array(
+      'group_parent' => '0',
+      'show_depth' => 1,
+      'default_value' => array(
+        '0' => array(
+          'value' => NULL,
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Publish to CSPedia Companies',
+      'weight' => '22',
+      'description' => 'Submit this article to Company News on CSPedia\'s homepage?',
+      'type' => 'content_taxonomy_options',
+      'module' => 'content_taxonomy_options',
+    ),
+  );
+
+  // Exported field: field_publishto_cspedia_people
+  $fields['article-field_publishto_cspedia_people'] = array(
+    'field_name' => 'field_publishto_cspedia_people',
+    'type_name' => 'article',
+    'display_settings' => array(
+      'weight' => '23',
+      'parent' => 'group_articleclassification',
+      'label' => array(
+        'format' => 'inline',
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'content_taxonomy',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'content_taxonomy',
+    'active' => '1',
+    'save_term_node' => 1,
+    'vid' => '47',
+    'parent' => '0',
+    'parent_php_code' => '',
+    'depth' => '',
+    'widget' => array(
+      'group_parent' => '0',
+      'show_depth' => 1,
+      'default_value' => array(
+        '0' => array(
+          'value' => '',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Publish to CSPedia People',
+      'weight' => '23',
+      'description' => 'Submit this article to People News on CSPedia\'s homepage?',
+      'type' => 'content_taxonomy_options',
+      'module' => 'content_taxonomy_options',
+    ),
+  );
+
+  // Exported field: field_publishto_tobaccoenews
+  $fields['article-field_publishto_tobaccoenews'] = array(
+    'field_name' => 'field_publishto_tobaccoenews',
+    'type_name' => 'article',
+    'display_settings' => array(
+      'weight' => '24',
+      'parent' => 'group_articleclassification',
+      'label' => array(
+        'format' => 'inline',
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'content_taxonomy',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'content_taxonomy',
+    'active' => '1',
+    'save_term_node' => 1,
+    'vid' => '48',
+    'parent' => '0',
+    'parent_php_code' => '',
+    'depth' => '',
+    'widget' => array(
+      'group_parent' => '0',
+      'show_depth' => 1,
+      'default_value' => array(
+        '0' => array(
+          'value' => '',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Publish to Tobacco E-News',
+      'weight' => '24',
+      'description' => 'Submit this article to Tobacco E-News homepage?',
+      'type' => 'content_taxonomy_options',
+      'module' => 'content_taxonomy_options',
+    ),
+  );
+
+  // Exported field: field_pubsource
+  $fields['article-field_pubsource'] = array(
+    'field_name' => 'field_pubsource',
+    'type_name' => 'article',
+    'display_settings' => array(
+      'weight' => '18',
+      'parent' => 'group_articleclassification',
+      'label' => array(
+        'format' => 'inline',
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'content_taxonomy',
+    'required' => '1',
+    'multiple' => '0',
+    'module' => 'content_taxonomy',
+    'active' => '1',
+    'save_term_node' => 1,
+    'vid' => '44',
+    'parent' => '0',
+    'parent_php_code' => '',
+    'depth' => '',
+    'widget' => array(
+      'group_parent' => '0',
+      'show_depth' => 1,
+      'default_value' => array(
+        '0' => array(
+          'value' => '',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Publication Source',
+      'weight' => '18',
+      'description' => '',
+      'type' => 'content_taxonomy_options',
+      'module' => 'content_taxonomy_options',
     ),
   );
 
@@ -436,12 +1260,8 @@ function op_article_content_default_fields() {
     'field_name' => 'field_related_content',
     'type_name' => 'article',
     'display_settings' => array(
-      'weight' => '9',
-      'parent' => '',
-      '4' => array(
-        'format' => 'default',
-        'exclude' => 1,
-      ),
+      'weight' => '15',
+      'parent' => 'group_attachments_related',
       'label' => array(
         'format' => 'above',
       ),
@@ -452,6 +1272,10 @@ function op_article_content_default_fields() {
       'full' => array(
         'format' => 'default',
         'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 1,
       ),
       '2' => array(
         'format' => 'default',
@@ -502,7 +1326,7 @@ function op_article_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Related Content',
-      'weight' => '8',
+      'weight' => '15',
       'description' => '',
       'type' => 'nodereference_autocomplete',
       'module' => 'nodereference',
@@ -514,12 +1338,8 @@ function op_article_content_default_fields() {
     'field_name' => 'field_show_author_info',
     'type_name' => 'article',
     'display_settings' => array(
-      'weight' => '3',
-      'parent' => '',
-      '4' => array(
-        'format' => 'default',
-        'exclude' => 1,
-      ),
+      'weight' => 0,
+      'parent' => 'group_authoring',
       'label' => array(
         'format' => 'above',
       ),
@@ -528,6 +1348,10 @@ function op_article_content_default_fields() {
         'exclude' => 1,
       ),
       'full' => array(
+        'format' => 'default',
+        'exclude' => 1,
+      ),
+      '4' => array(
         'format' => 'default',
         'exclude' => 1,
       ),
@@ -563,7 +1387,7 @@ Show Author Info?',
       ),
       'default_value_php' => NULL,
       'label' => 'Show Author Info?',
-      'weight' => '3',
+      'weight' => 0,
       'description' => 'Show author information (such as name, picture and bio) after the article. (The author must be a site user with profile information.)',
       'type' => 'optionwidgets_onoff',
       'module' => 'optionwidgets',
@@ -575,12 +1399,8 @@ Show Author Info?',
     'field_name' => 'field_teaser',
     'type_name' => 'article',
     'display_settings' => array(
-      'weight' => '4',
+      'weight' => '-1',
       'parent' => '',
-      '4' => array(
-        'format' => 'default',
-        'exclude' => 1,
-      ),
       'label' => array(
         'format' => 'above',
       ),
@@ -591,6 +1411,10 @@ Show Author Info?',
       'full' => array(
         'format' => 'default',
         'exclude' => 1,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
       ),
       '2' => array(
         'format' => 'default',
@@ -626,7 +1450,7 @@ Show Author Info?',
       ),
       'default_value_php' => NULL,
       'label' => 'Teaser',
-      'weight' => 0,
+      'weight' => '-1',
       'description' => '',
       'type' => 'text_textarea',
       'module' => 'text',
@@ -638,12 +1462,8 @@ Show Author Info?',
     'field_name' => 'field_thumbnail_image',
     'type_name' => 'article',
     'display_settings' => array(
-      'weight' => '6',
+      'weight' => '3',
       'parent' => '',
-      '4' => array(
-        'format' => 'default',
-        'exclude' => 1,
-      ),
       'label' => array(
         'format' => 'above',
       ),
@@ -654,6 +1474,10 @@ Show Author Info?',
       'full' => array(
         'format' => 'image_plain',
         'exclude' => 1,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
       ),
       '2' => array(
         'format' => 'default',
@@ -701,12 +1525,12 @@ Show Author Info?',
         'imce' => 'imce',
         'reference' => 0,
       ),
-      'filefield_source_autocomplete' => NULL,
       'filefield_source_attach_path' => NULL,
       'filefield_source_attach_absolute' => NULL,
       'filefield_source_attach_mode' => NULL,
+      'filefield_source_autocomplete' => NULL,
       'label' => 'Thumbnail Image',
-      'weight' => '5',
+      'weight' => '3',
       'description' => '',
       'type' => 'imagefield_widget',
       'module' => 'imagefield',
@@ -715,14 +1539,27 @@ Show Author Info?',
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Article Spotlight');
   t('Author(s)');
+  t('Category Analysis Placement');
+  t('Category Placement');
   t('Deck');
-  t('DocumentCloud Document');
+  t('Editorial Tags');
+  t('Home Page Placement');
   t('Main Image');
   t('Main Image Credit');
+  t('Mobile Placement');
+  t('News Flash');
+  t('Publication Source');
+  t('Publish to CSPedia Companies');
+  t('Publish to CSPedia People');
+  t('Publish to Tobacco E-News');
   t('Related Content');
   t('Related Multimedia');
+  t('Retailer Focus');
+  t('Section');
   t('Show Author Info?');
+  t('Supplier Focus');
   t('Teaser');
   t('Thumbnail Image');
 

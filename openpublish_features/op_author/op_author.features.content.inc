@@ -11,18 +11,18 @@ function op_author_content_default_fields() {
     'field_name' => 'field_author_photo',
     'type_name' => 'author',
     'display_settings' => array(
-      'weight' => '-2',
+      'weight' => '-1',
       'parent' => '',
       'label' => array(
-        'format' => 'above',
+        'format' => 'hidden',
       ),
       'teaser' => array(
         'format' => 'image_plain',
-        'exclude' => 1,
+        'exclude' => 0,
       ),
       'full' => array(
         'format' => 'image_plain',
-        'exclude' => 1,
+        'exclude' => 0,
       ),
       '4' => array(
         'format' => 'image_plain',
@@ -74,12 +74,12 @@ function op_author_content_default_fields() {
         'imce' => 'imce',
         'reference' => 0,
       ),
-      'filefield_source_autocomplete' => NULL,
       'filefield_source_attach_path' => NULL,
       'filefield_source_attach_absolute' => NULL,
       'filefield_source_attach_mode' => NULL,
+      'filefield_source_autocomplete' => NULL,
       'label' => 'Photo',
-      'weight' => '-2',
+      'weight' => '-1',
       'description' => '',
       'type' => 'imagefield_widget',
       'module' => 'imagefield',
@@ -98,11 +98,11 @@ function op_author_content_default_fields() {
       ),
       'teaser' => array(
         'format' => 'default',
-        'exclude' => 1,
+        'exclude' => 0,
       ),
       'full' => array(
         'format' => 'default',
-        'exclude' => 1,
+        'exclude' => 0,
       ),
       '4' => array(
         'format' => 'default',
@@ -156,6 +156,140 @@ function op_author_content_default_fields() {
     ),
   );
 
+  // Exported field: field_authorcompany
+  $fields['author-field_authorcompany'] = array(
+    'field_name' => 'field_authorcompany',
+    'type_name' => 'author',
+    'display_settings' => array(
+      'weight' => '8',
+      'parent' => '',
+      'label' => array(
+        'format' => 'hidden',
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'text',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'text',
+    'active' => '1',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'widget' => array(
+      'rows' => 5,
+      'size' => '80',
+      'default_value' => array(
+        '0' => array(
+          'value' => '',
+          '_error_element' => 'default_value_widget][field_authorcompany][0][value',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Author Company',
+      'weight' => '8',
+      'description' => '',
+      'type' => 'text_textfield',
+      'module' => 'text',
+    ),
+  );
+
+  // Exported field: field_authoremail
+  $fields['author-field_authoremail'] = array(
+    'field_name' => 'field_authoremail',
+    'type_name' => 'author',
+    'display_settings' => array(
+      'weight' => '-2',
+      'parent' => '',
+      'label' => array(
+        'format' => 'above',
+      ),
+      'teaser' => array(
+        'format' => 'url',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'url',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'link',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'link',
+    'active' => '1',
+    'attributes' => array(
+      'target' => '_blank',
+      'rel' => '',
+      'class' => '',
+      'title' => '',
+    ),
+    'display' => array(
+      'url_cutoff' => '80',
+    ),
+    'url' => 0,
+    'title' => 'none',
+    'title_value' => '',
+    'enable_tokens' => 0,
+    'validate_url' => 1,
+    'widget' => array(
+      'default_value' => array(
+        '0' => array(
+          'title' => '',
+          'url' => '',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Author Email',
+      'weight' => '-2',
+      'description' => '',
+      'type' => 'link',
+      'module' => 'link',
+    ),
+  );
+
   // Exported field: field_op_author_jobtitle
   $fields['author-field_op_author_jobtitle'] = array(
     'field_name' => 'field_op_author_jobtitle',
@@ -168,11 +302,11 @@ function op_author_content_default_fields() {
       ),
       'teaser' => array(
         'format' => 'default',
-        'exclude' => 1,
+        'exclude' => 0,
       ),
       'full' => array(
         'format' => 'default',
-        'exclude' => 1,
+        'exclude' => 0,
       ),
       '4' => array(
         'format' => 'default',
@@ -222,6 +356,8 @@ function op_author_content_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Associated Drupal User');
+  t('Author Company');
+  t('Author Email');
   t('Job Title');
   t('Photo');
 

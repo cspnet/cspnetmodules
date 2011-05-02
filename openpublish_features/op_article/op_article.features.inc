@@ -22,7 +22,7 @@ function op_article_ctools_plugin_api() {
 function op_article_node_info() {
   $items = array(
     'article' => array(
-      'name' => t('Article'),
+      'name' => t('News'),
       'module' => 'features',
       'description' => t('Articles can be posted to the site in category lists and on the homepage.'),
       'has_title' => '1',
