@@ -191,18 +191,6 @@ function op_contexts_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-articles-block_2' => array(
-          'module' => 'views',
-          'delta' => 'articles-block_2',
-          'region' => 'left',
-          'weight' => 0,
-        ),
-        'views-articles-block_1' => array(
-          'module' => 'views',
-          'delta' => 'articles-block_1',
-          'region' => 'left',
-          'weight' => 1,
-        ),
         'views-most_viewed_by_node_type-block' => array(
           'module' => 'views',
           'delta' => 'most_viewed_by_node_type-block',
@@ -221,46 +209,10 @@ function op_contexts_context_default_contexts() {
           'region' => 'right',
           'weight' => 2,
         ),
-        'openpublish_popular_terms-0' => array(
-          'module' => 'openpublish_popular_terms',
-          'delta' => 0,
+        'views-marketplace-block_1' => array(
+          'module' => 'views',
+          'delta' => 'marketplace-block_1',
           'region' => 'right',
-          'weight' => 3,
-        ),
-        'block-5' => array(
-          'module' => 'block',
-          'delta' => 5,
-          'region' => 'right',
-          'weight' => 4,
-        ),
-        'openpublish_popular_terms-1' => array(
-          'module' => 'openpublish_popular_terms',
-          'delta' => 1,
-          'region' => 'right',
-          'weight' => 5,
-        ),
-        'views-blogs-block_2' => array(
-          'module' => 'views',
-          'delta' => 'blogs-block_2',
-          'region' => 'over_content',
-          'weight' => 0,
-        ),
-        'views-multimedia-block_1' => array(
-          'module' => 'views',
-          'delta' => 'multimedia-block_1',
-          'region' => 'over_content',
-          'weight' => 1,
-        ),
-        'views-resources-block_1' => array(
-          'module' => 'views',
-          'delta' => 'resources-block_1',
-          'region' => 'over_content',
-          'weight' => 2,
-        ),
-        'views-events-block_1' => array(
-          'module' => 'views',
-          'delta' => 'events-block_1',
-          'region' => 'over_content',
           'weight' => 3,
         ),
       ),
