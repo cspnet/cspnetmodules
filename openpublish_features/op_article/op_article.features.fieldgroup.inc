@@ -18,7 +18,7 @@ function op_article_fieldgroup_default_groups() {
         'description' => 'Set the publication source, section and article general tagging options.',
       ),
       'display' => array(
-        'weight' => '9',
+        'weight' => '6',
         'label' => 'above',
         'teaser' => array(
           'format' => 'fieldset_collapsible',
@@ -47,16 +47,16 @@ function op_article_fieldgroup_default_groups() {
         ),
       ),
     ),
-    'weight' => '9',
+    'weight' => '6',
     'fields' => array(
       '0' => 'field_pubsource',
       '1' => 'field_newssection',
-      '2' => 'field_newsflash',
-      '3' => 'field_publishto_cspedia_companie',
-      '4' => 'field_publishto_cspedia_people',
-      '5' => 'field_publishto_tobaccoenews',
-      '6' => 'field_featured_retailers',
-      '7' => 'field_featured_suppliers',
+      '2' => 'field_featured_retailers',
+      '3' => 'field_featured_suppliers',
+      '4' => 'field_newsflashes',
+      '5' => 'field_cspediafeed_news',
+      '6' => 'field_cspediafeed_people',
+      '7' => 'field_feed_tobaccoenews',
       '8' => 'field_articlespotlight',
     ),
   );
@@ -73,7 +73,7 @@ function op_article_fieldgroup_default_groups() {
         'description' => '',
       ),
       'display' => array(
-        'weight' => '14',
+        'weight' => '12',
         'label' => 'above',
         'teaser' => array(
           'format' => 'fieldset',
@@ -102,7 +102,7 @@ function op_article_fieldgroup_default_groups() {
         ),
       ),
     ),
-    'weight' => '14',
+    'weight' => '12',
     'fields' => array(
       '0' => 'field_related_content',
       '1' => 'field_op_related_mmedia',
@@ -121,7 +121,7 @@ function op_article_fieldgroup_default_groups() {
         'description' => '',
       ),
       'display' => array(
-        'weight' => '18',
+        'weight' => '16',
         'label' => 'above',
         'teaser' => array(
           'format' => 'fieldset_collapsed',
@@ -150,7 +150,7 @@ function op_article_fieldgroup_default_groups() {
         ),
       ),
     ),
-    'weight' => '18',
+    'weight' => '16',
     'fields' => array(
       '0' => 'field_show_author_info',
       '1' => 'field_op_author',
@@ -169,7 +169,7 @@ function op_article_fieldgroup_default_groups() {
         'description' => '',
       ),
       'display' => array(
-        'weight' => '12',
+        'weight' => '10',
         'label' => 'above',
         'teaser' => array(
           'format' => 'fieldset_collapsed',
@@ -198,9 +198,9 @@ function op_article_fieldgroup_default_groups() {
         ),
       ),
     ),
-    'weight' => '12',
+    'weight' => '10',
     'fields' => array(
-      '0' => 'field_catspecific_articles',
+      '0' => 'field_category_analysisnews',
     ),
   );
 
@@ -216,14 +216,62 @@ function op_article_fieldgroup_default_groups() {
         'description' => '',
       ),
       'display' => array(
-        'weight' => '11',
+        'weight' => '8',
         'label' => 'above',
         'teaser' => array(
           'format' => 'fieldset_collapsible',
           'exclude' => 0,
         ),
         'full' => array(
+          'format' => 'hidden',
+          'exclude' => 0,
+        ),
+        '4' => array(
           'format' => 'fieldset',
+          'exclude' => 0,
+        ),
+        'description' => '',
+        '2' => array(
+          'format' => 'fieldset',
+          'exclude' => 0,
+        ),
+        '3' => array(
+          'format' => 'fieldset',
+          'exclude' => 0,
+        ),
+        'token' => array(
+          'format' => 'fieldset',
+          'exclude' => 0,
+        ),
+      ),
+    ),
+    'weight' => '8',
+    'fields' => array(
+      '0' => 'field_category_dnews',
+      '1' => 'field_mobile_placement',
+    ),
+  );
+
+  // Exported group: group_internal_tagging
+  $groups['article-group_internal_tagging'] = array(
+    'group_type' => 'standard',
+    'type_name' => 'article',
+    'group_name' => 'group_internal_tagging',
+    'label' => 'For Editorial Usage Tagging Only',
+    'settings' => array(
+      'form' => array(
+        'style' => 'fieldset',
+        'description' => '',
+      ),
+      'display' => array(
+        'weight' => '11',
+        'label' => 'hidden',
+        'teaser' => array(
+          'format' => 'hidden',
+          'exclude' => 0,
+        ),
+        'full' => array(
+          'format' => 'hidden',
           'exclude' => 0,
         ),
         '4' => array(
@@ -246,54 +294,6 @@ function op_article_fieldgroup_default_groups() {
       ),
     ),
     'weight' => '11',
-    'fields' => array(
-      '0' => 'field_dnews_catplacement',
-      '1' => 'field_mobile_dnewsplacement',
-    ),
-  );
-
-  // Exported group: group_internal_tagging
-  $groups['article-group_internal_tagging'] = array(
-    'group_type' => 'standard',
-    'type_name' => 'article',
-    'group_name' => 'group_internal_tagging',
-    'label' => 'For Editorial Usage Tagging Only',
-    'settings' => array(
-      'form' => array(
-        'style' => 'fieldset',
-        'description' => '',
-      ),
-      'display' => array(
-        'weight' => '13',
-        'label' => 'above',
-        'teaser' => array(
-          'format' => 'fieldset_collapsed',
-          'exclude' => 0,
-        ),
-        'full' => array(
-          'format' => 'fieldset_collapsed',
-          'exclude' => 0,
-        ),
-        '4' => array(
-          'format' => 'fieldset',
-          'exclude' => 0,
-        ),
-        'description' => '',
-        '2' => array(
-          'format' => 'fieldset',
-          'exclude' => 0,
-        ),
-        '3' => array(
-          'format' => 'fieldset',
-          'exclude' => 0,
-        ),
-        'token' => array(
-          'format' => 'fieldset',
-          'exclude' => 0,
-        ),
-      ),
-    ),
-    'weight' => '13',
     'fields' => array(
       '0' => 'field_editorial_tags',
     ),

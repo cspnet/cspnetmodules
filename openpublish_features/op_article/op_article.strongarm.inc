@@ -23,7 +23,7 @@ function op_article_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_controls_article';
-  $strongarm->value = '0';
+  $strongarm->value = '3';
 
   $export['comment_controls_article'] = $strongarm;
   $strongarm = new stdClass;
@@ -51,7 +51,7 @@ function op_article_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_form_location_article';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
 
   $export['comment_form_location_article'] = $strongarm;
   $strongarm = new stdClass;
@@ -75,16 +75,14 @@ function op_article_strongarm() {
   $strongarm->value = array(
     'title' => '-5',
     'body_field' => '0',
-    'revision_information' => '7',
-    'author' => '17',
-    'options' => '8',
-    'comment_settings' => '16',
+    'revision_information' => '4',
+    'author' => '15',
+    'options' => '5',
+    'comment_settings' => '14',
     'menu' => '-3',
     'taxonomy' => '-2',
-    'path' => '15',
-    'attachments' => '1',
-    'scheduler_settings' => '5',
-    'workflow' => '6',
+    'path' => '13',
+    'scheduler_settings' => '9',
   );
 
   $export['content_extra_weights_article'] = $strongarm;
@@ -123,7 +121,7 @@ function op_article_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'upload_article';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
 
   $export['upload_article'] = $strongarm;
   return $export;

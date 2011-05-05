@@ -11,7 +11,7 @@ function op_article_content_default_fields() {
     'field_name' => 'field_articlespotlight',
     'type_name' => 'article',
     'display_settings' => array(
-      'weight' => '27',
+      'weight' => '26',
       'parent' => 'group_articleclassification',
       'label' => array(
         'format' => 'above',
@@ -57,27 +57,27 @@ function op_article_content_default_fields() {
       'show_depth' => 1,
       'default_value' => array(
         '0' => array(
-          'value' => '',
+          'value' => NULL,
         ),
       ),
       'default_value_php' => NULL,
       'label' => 'Article Spotlight',
-      'weight' => '27',
+      'weight' => '26',
       'description' => '',
       'type' => 'content_taxonomy_options',
       'module' => 'content_taxonomy_options',
     ),
   );
 
-  // Exported field: field_catspecific_articles
-  $fields['article-field_catspecific_articles'] = array(
-    'field_name' => 'field_catspecific_articles',
+  // Exported field: field_category_analysisnews
+  $fields['article-field_category_analysisnews'] = array(
+    'field_name' => 'field_category_analysisnews',
     'type_name' => 'article',
     'display_settings' => array(
-      'weight' => '24',
+      'weight' => '29',
       'parent' => 'group_catspecific_newsletters',
       'label' => array(
-        'format' => 'inline',
+        'format' => 'above',
       ),
       'teaser' => array(
         'format' => 'default',
@@ -105,30 +105,217 @@ function op_article_content_default_fields() {
       ),
     ),
     'widget_active' => '1',
-    'type' => 'content_taxonomy',
+    'type' => 'text',
     'required' => '0',
     'multiple' => '0',
-    'module' => 'content_taxonomy',
+    'module' => 'text',
     'active' => '1',
-    'save_term_node' => 1,
-    'vid' => '56',
-    'parent' => '0',
-    'parent_php_code' => '',
-    'depth' => '',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => 'Top Article|Top Article
+Article 1|Article 1
+Article 2|Article 2
+Article 3|Article 3
+Article 4|Article 4
+Article 5|Article 5
+Article 6|Article 6
+Article 7|Article 7',
+    'allowed_values_php' => '',
     'widget' => array(
-      'group_parent' => '0',
-      'show_depth' => 1,
       'default_value' => array(
         '0' => array(
           'value' => '',
         ),
       ),
       'default_value_php' => NULL,
-      'label' => 'Category Analysis Placement',
+      'label' => 'Category Analysis Newsletter Placement',
+      'weight' => '29',
+      'description' => '',
+      'type' => 'optionwidgets_select',
+      'module' => 'optionwidgets',
+    ),
+  );
+
+  // Exported field: field_category_dnews
+  $fields['article-field_category_dnews'] = array(
+    'field_name' => 'field_category_dnews',
+    'type_name' => 'article',
+    'display_settings' => array(
+      'weight' => '27',
+      'parent' => 'group_dnewsplacement',
+      'label' => array(
+        'format' => 'above',
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'text',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'text',
+    'active' => '1',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => 'Category Top Story|Category Top Story
+Category News|Category News',
+    'allowed_values_php' => '',
+    'widget' => array(
+      'default_value' => array(
+        '0' => array(
+          'value' => '',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Category Dnews Placement',
+      'weight' => '27',
+      'description' => '',
+      'type' => 'optionwidgets_select',
+      'module' => 'optionwidgets',
+    ),
+  );
+
+  // Exported field: field_cspediafeed_news
+  $fields['article-field_cspediafeed_news'] = array(
+    'field_name' => 'field_cspediafeed_news',
+    'type_name' => 'article',
+    'display_settings' => array(
+      'weight' => '23',
+      'parent' => 'group_articleclassification',
+      'label' => array(
+        'format' => 'hidden',
+      ),
+      'teaser' => array(
+        'format' => 'hidden',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'hidden',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'text',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'text',
+    'active' => '1',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => 'Yes|Yes
+No|No',
+    'allowed_values_php' => '',
+    'widget' => array(
+      'default_value' => array(
+        '0' => array(
+          'value' => 'No',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Publish to CSPedia News',
+      'weight' => '23',
+      'description' => '',
+      'type' => 'optionwidgets_buttons',
+      'module' => 'optionwidgets',
+    ),
+  );
+
+  // Exported field: field_cspediafeed_people
+  $fields['article-field_cspediafeed_people'] = array(
+    'field_name' => 'field_cspediafeed_people',
+    'type_name' => 'article',
+    'display_settings' => array(
+      'weight' => '24',
+      'parent' => 'group_articleclassification',
+      'label' => array(
+        'format' => 'hidden',
+      ),
+      'teaser' => array(
+        'format' => 'hidden',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'hidden',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '2' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '3' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'text',
+    'required' => '0',
+    'multiple' => '0',
+    'module' => 'text',
+    'active' => '1',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => 'Yes|Yes
+No|No',
+    'allowed_values_php' => '',
+    'widget' => array(
+      'default_value' => array(
+        '0' => array(
+          'value' => 'No',
+        ),
+      ),
+      'default_value_php' => NULL,
+      'label' => 'Publish to CSPedia People',
       'weight' => '24',
       'description' => '',
-      'type' => 'content_taxonomy_options',
-      'module' => 'content_taxonomy_options',
+      'type' => 'optionwidgets_buttons',
+      'module' => 'optionwidgets',
     ),
   );
 
@@ -195,69 +382,6 @@ function op_article_content_default_fields() {
     ),
   );
 
-  // Exported field: field_dnews_catplacement
-  $fields['article-field_dnews_catplacement'] = array(
-    'field_name' => 'field_dnews_catplacement',
-    'type_name' => 'article',
-    'display_settings' => array(
-      'weight' => '22',
-      'parent' => 'group_dnewsplacement',
-      'label' => array(
-        'format' => 'above',
-      ),
-      'teaser' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      'full' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      '4' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      '2' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      '3' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      'token' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-    ),
-    'widget_active' => '1',
-    'type' => 'content_taxonomy',
-    'required' => '0',
-    'multiple' => '0',
-    'module' => 'content_taxonomy',
-    'active' => '1',
-    'save_term_node' => 1,
-    'vid' => '54',
-    'parent' => '0',
-    'parent_php_code' => '',
-    'depth' => '',
-    'widget' => array(
-      'group_parent' => '0',
-      'show_depth' => 1,
-      'default_value' => array(
-        '0' => array(
-          'value' => '',
-        ),
-      ),
-      'default_value_php' => NULL,
-      'label' => 'Category Placement',
-      'weight' => '22',
-      'description' => '',
-      'type' => 'content_taxonomy_options',
-      'module' => 'content_taxonomy_options',
-    ),
-  );
-
   // Exported field: field_editorial_tags
   $fields['article-field_editorial_tags'] = array(
     'field_name' => 'field_editorial_tags',
@@ -266,14 +390,14 @@ function op_article_content_default_fields() {
       'weight' => '25',
       'parent' => 'group_internal_tagging',
       'label' => array(
-        'format' => 'above',
+        'format' => 'hidden',
       ),
       'teaser' => array(
-        'format' => 'default',
+        'format' => 'hidden',
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => 'default',
+        'format' => 'hidden',
         'exclude' => 0,
       ),
       '4' => array(
@@ -296,11 +420,11 @@ function op_article_content_default_fields() {
     'widget_active' => '1',
     'type' => 'content_taxonomy',
     'required' => '0',
-    'multiple' => '0',
+    'multiple' => '1',
     'module' => 'content_taxonomy',
     'active' => '1',
     'save_term_node' => 1,
-    'vid' => '49',
+    'vid' => '52',
     'parent' => '0',
     'parent_php_code' => '',
     'depth' => '',
@@ -326,7 +450,7 @@ function op_article_content_default_fields() {
     'field_name' => 'field_featured_retailers',
     'type_name' => 'article',
     'display_settings' => array(
-      'weight' => '25',
+      'weight' => '20',
       'parent' => 'group_articleclassification',
       'label' => array(
         'format' => 'above',
@@ -363,7 +487,7 @@ function op_article_content_default_fields() {
     'module' => 'content_taxonomy',
     'active' => '1',
     'save_term_node' => 1,
-    'vid' => '50',
+    'vid' => '53',
     'parent' => '0',
     'parent_php_code' => '',
     'depth' => '',
@@ -377,7 +501,7 @@ function op_article_content_default_fields() {
       ),
       'default_value_php' => NULL,
       'label' => 'Retailer Focus',
-      'weight' => '25',
+      'weight' => '20',
       'description' => 'Hold down CTRL to select more than one.',
       'type' => 'content_taxonomy_select',
       'module' => 'content_taxonomy_options',
@@ -389,7 +513,7 @@ function op_article_content_default_fields() {
     'field_name' => 'field_featured_suppliers',
     'type_name' => 'article',
     'display_settings' => array(
-      'weight' => '26',
+      'weight' => '21',
       'parent' => 'group_articleclassification',
       'label' => array(
         'format' => 'above',
@@ -426,7 +550,7 @@ function op_article_content_default_fields() {
     'module' => 'content_taxonomy',
     'active' => '1',
     'save_term_node' => 1,
-    'vid' => '51',
+    'vid' => '54',
     'parent' => '0',
     'parent_php_code' => '',
     'depth' => '',
@@ -435,34 +559,34 @@ function op_article_content_default_fields() {
       'show_depth' => 1,
       'default_value' => array(
         '0' => array(
-          'value' => '',
+          'value' => NULL,
         ),
       ),
       'default_value_php' => NULL,
       'label' => 'Supplier Focus',
-      'weight' => '26',
+      'weight' => '21',
       'description' => 'Hold down CTRL to select more than one.',
       'type' => 'content_taxonomy_select',
       'module' => 'content_taxonomy_options',
     ),
   );
 
-  // Exported field: field_homepage_placement
-  $fields['article-field_homepage_placement'] = array(
-    'field_name' => 'field_homepage_placement',
+  // Exported field: field_feed_tobaccoenews
+  $fields['article-field_feed_tobaccoenews'] = array(
+    'field_name' => 'field_feed_tobaccoenews',
     'type_name' => 'article',
     'display_settings' => array(
-      'weight' => '10',
-      'parent' => '',
+      'weight' => '25',
+      'parent' => 'group_articleclassification',
       'label' => array(
-        'format' => 'above',
+        'format' => 'hidden',
       ),
       'teaser' => array(
-        'format' => 'default',
+        'format' => 'hidden',
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => 'default',
+        'format' => 'hidden',
         'exclude' => 0,
       ),
       '4' => array(
@@ -483,31 +607,28 @@ function op_article_content_default_fields() {
       ),
     ),
     'widget_active' => '1',
-    'type' => 'content_taxonomy',
+    'type' => 'text',
     'required' => '0',
     'multiple' => '0',
-    'module' => 'content_taxonomy',
+    'module' => 'text',
     'active' => '1',
-    'save_term_node' => 1,
-    'vid' => '52',
-    'parent' => '0',
-    'parent_php_code' => '',
-    'depth' => '',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => 'Yes|Yes
+No|No',
+    'allowed_values_php' => '',
     'widget' => array(
-      'group_parent' => '0',
-      'show_depth' => 1,
       'default_value' => array(
         '0' => array(
-          'value' => '',
+          'value' => 'No',
         ),
       ),
       'default_value_php' => NULL,
-      'label' => 'Home Page Placement',
-      'weight' => '10',
-      'description' => 'Top Story, Feature 1 and Feature 2 articles appear in Top News slideshow. 
-News 1, 2, 3, 4 and up articles appear under Latest News. The higher the number the farther down in the list the article will appear.',
-      'type' => 'content_taxonomy_select',
-      'module' => 'content_taxonomy_options',
+      'label' => 'Publish to Tobacco E-News',
+      'weight' => '25',
+      'description' => '',
+      'type' => 'optionwidgets_buttons',
+      'module' => 'optionwidgets',
     ),
   );
 
@@ -516,7 +637,7 @@ News 1, 2, 3, 4 and up articles appear under Latest News. The higher the number 
     'field_name' => 'field_main_image',
     'type_name' => 'article',
     'display_settings' => array(
-      'weight' => '2',
+      'weight' => '1',
       'parent' => '',
       'label' => array(
         'format' => 'above',
@@ -588,7 +709,7 @@ News 1, 2, 3, 4 and up articles appear under Latest News. The higher the number 
       'filefield_source_attach_mode' => NULL,
       'filefield_source_autocomplete' => NULL,
       'label' => 'Main Image',
-      'weight' => '2',
+      'weight' => '1',
       'description' => 'Appears at the top of detail pages and as a thumbnail on list pages.',
       'type' => 'imagefield_widget',
       'module' => 'imagefield',
@@ -600,7 +721,7 @@ News 1, 2, 3, 4 and up articles appear under Latest News. The higher the number 
     'field_name' => 'field_main_image_credit',
     'type_name' => 'article',
     'display_settings' => array(
-      'weight' => '4',
+      'weight' => '3',
       'parent' => '',
       'label' => array(
         'format' => 'above',
@@ -651,19 +772,19 @@ News 1, 2, 3, 4 and up articles appear under Latest News. The higher the number 
       ),
       'default_value_php' => NULL,
       'label' => 'Main Image Credit',
-      'weight' => '4',
+      'weight' => '3',
       'description' => '',
       'type' => 'text_textfield',
       'module' => 'text',
     ),
   );
 
-  // Exported field: field_mobile_dnewsplacement
-  $fields['article-field_mobile_dnewsplacement'] = array(
-    'field_name' => 'field_mobile_dnewsplacement',
+  // Exported field: field_mobile_placement
+  $fields['article-field_mobile_placement'] = array(
+    'field_name' => 'field_mobile_placement',
     'type_name' => 'article',
     'display_settings' => array(
-      'weight' => '23',
+      'weight' => '28',
       'parent' => 'group_dnewsplacement',
       'label' => array(
         'format' => 'above',
@@ -694,49 +815,49 @@ News 1, 2, 3, 4 and up articles appear under Latest News. The higher the number 
       ),
     ),
     'widget_active' => '1',
-    'type' => 'content_taxonomy',
+    'type' => 'text',
     'required' => '0',
     'multiple' => '0',
-    'module' => 'content_taxonomy',
+    'module' => 'text',
     'active' => '1',
-    'save_term_node' => 1,
-    'vid' => '55',
-    'parent' => '0',
-    'parent_php_code' => '',
-    'depth' => '',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => 'Top Story|Top Story
+Feature 1|Feature 1
+Feature 2|Feature 2
+News|News',
+    'allowed_values_php' => '',
     'widget' => array(
-      'group_parent' => '0',
-      'show_depth' => 1,
       'default_value' => array(
         '0' => array(
           'value' => '',
         ),
       ),
       'default_value_php' => NULL,
-      'label' => 'Mobile Placement',
-      'weight' => '23',
+      'label' => 'Mobile Dnews Placement',
+      'weight' => '28',
       'description' => '',
-      'type' => 'content_taxonomy_options',
-      'module' => 'content_taxonomy_options',
+      'type' => 'optionwidgets_select',
+      'module' => 'optionwidgets',
     ),
   );
 
-  // Exported field: field_newsflash
-  $fields['article-field_newsflash'] = array(
-    'field_name' => 'field_newsflash',
+  // Exported field: field_newsflashes
+  $fields['article-field_newsflashes'] = array(
+    'field_name' => 'field_newsflashes',
     'type_name' => 'article',
     'display_settings' => array(
-      'weight' => '21',
+      'weight' => '22',
       'parent' => 'group_articleclassification',
       'label' => array(
-        'format' => 'above',
+        'format' => 'hidden',
       ),
       'teaser' => array(
-        'format' => 'default',
+        'format' => 'hidden',
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => 'default',
+        'format' => 'hidden',
         'exclude' => 0,
       ),
       '4' => array(
@@ -757,30 +878,28 @@ News 1, 2, 3, 4 and up articles appear under Latest News. The higher the number 
       ),
     ),
     'widget_active' => '1',
-    'type' => 'content_taxonomy',
+    'type' => 'text',
     'required' => '0',
     'multiple' => '0',
-    'module' => 'content_taxonomy',
+    'module' => 'text',
     'active' => '1',
-    'save_term_node' => 1,
-    'vid' => '57',
-    'parent' => '0',
-    'parent_php_code' => '',
-    'depth' => '',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => 'Yes|Yes
+No|No',
+    'allowed_values_php' => '',
     'widget' => array(
-      'group_parent' => '0',
-      'show_depth' => 1,
       'default_value' => array(
         '0' => array(
-          'value' => '',
+          'value' => 'No',
         ),
       ),
       'default_value_php' => NULL,
       'label' => 'News Flash',
-      'weight' => '21',
-      'description' => 'TIP: News Flashes should only be scheduled to be published for one day. If this is a News Flash do NOT set any placement tagging below this point. Only tag to Section and Publication Source above.',
-      'type' => 'content_taxonomy_options',
-      'module' => 'content_taxonomy_options',
+      'weight' => '22',
+      'description' => '',
+      'type' => 'optionwidgets_buttons',
+      'module' => 'optionwidgets',
     ),
   );
 
@@ -839,7 +958,7 @@ News 1, 2, 3, 4 and up articles appear under Latest News. The higher the number 
         ),
       ),
       'default_value_php' => NULL,
-      'label' => 'Section',
+      'label' => 'Topic',
       'weight' => '19',
       'description' => '',
       'type' => 'content_taxonomy_select',
@@ -1003,22 +1122,22 @@ News 1, 2, 3, 4 and up articles appear under Latest News. The higher the number 
     ),
   );
 
-  // Exported field: field_publishto_cspedia_companie
-  $fields['article-field_publishto_cspedia_companie'] = array(
-    'field_name' => 'field_publishto_cspedia_companie',
+  // Exported field: field_placement_homepage
+  $fields['article-field_placement_homepage'] = array(
+    'field_name' => 'field_placement_homepage',
     'type_name' => 'article',
     'display_settings' => array(
-      'weight' => '22',
-      'parent' => 'group_articleclassification',
+      'weight' => '7',
+      'parent' => '',
       'label' => array(
-        'format' => 'inline',
+        'format' => 'hidden',
       ),
       'teaser' => array(
-        'format' => 'default',
+        'format' => 'hidden',
         'exclude' => 0,
       ),
       'full' => array(
-        'format' => 'default',
+        'format' => 'hidden',
         'exclude' => 0,
       ),
       '4' => array(
@@ -1039,156 +1158,41 @@ News 1, 2, 3, 4 and up articles appear under Latest News. The higher the number 
       ),
     ),
     'widget_active' => '1',
-    'type' => 'content_taxonomy',
+    'type' => 'text',
     'required' => '0',
     'multiple' => '0',
-    'module' => 'content_taxonomy',
+    'module' => 'text',
     'active' => '1',
-    'save_term_node' => 1,
-    'vid' => '46',
-    'parent' => '0',
-    'parent_php_code' => '',
-    'depth' => '',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => 'top_story|Top Story
+feature_1|Feature 1
+feature_2|Feature 2
+news_1|News 1
+news_2|News 2
+news_3|News 3
+news_4|News 4
+news_5|News 5
+news_6|News 6
+news_7|News 7
+news_8|News 8
+news_9|News 9
+news_10|News 10
+news_11|News 11
+',
+    'allowed_values_php' => '',
     'widget' => array(
-      'group_parent' => '0',
-      'show_depth' => 1,
-      'default_value' => array(
-        '0' => array(
-          'value' => NULL,
-        ),
-      ),
-      'default_value_php' => NULL,
-      'label' => 'Publish to CSPedia Companies',
-      'weight' => '22',
-      'description' => 'Submit this article to Company News on CSPedia\'s homepage?',
-      'type' => 'content_taxonomy_options',
-      'module' => 'content_taxonomy_options',
-    ),
-  );
-
-  // Exported field: field_publishto_cspedia_people
-  $fields['article-field_publishto_cspedia_people'] = array(
-    'field_name' => 'field_publishto_cspedia_people',
-    'type_name' => 'article',
-    'display_settings' => array(
-      'weight' => '23',
-      'parent' => 'group_articleclassification',
-      'label' => array(
-        'format' => 'inline',
-      ),
-      'teaser' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      'full' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      '4' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      '2' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      '3' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      'token' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-    ),
-    'widget_active' => '1',
-    'type' => 'content_taxonomy',
-    'required' => '0',
-    'multiple' => '0',
-    'module' => 'content_taxonomy',
-    'active' => '1',
-    'save_term_node' => 1,
-    'vid' => '47',
-    'parent' => '0',
-    'parent_php_code' => '',
-    'depth' => '',
-    'widget' => array(
-      'group_parent' => '0',
-      'show_depth' => 1,
       'default_value' => array(
         '0' => array(
           'value' => '',
         ),
       ),
       'default_value_php' => NULL,
-      'label' => 'Publish to CSPedia People',
-      'weight' => '23',
-      'description' => 'Submit this article to People News on CSPedia\'s homepage?',
-      'type' => 'content_taxonomy_options',
-      'module' => 'content_taxonomy_options',
-    ),
-  );
-
-  // Exported field: field_publishto_tobaccoenews
-  $fields['article-field_publishto_tobaccoenews'] = array(
-    'field_name' => 'field_publishto_tobaccoenews',
-    'type_name' => 'article',
-    'display_settings' => array(
-      'weight' => '24',
-      'parent' => 'group_articleclassification',
-      'label' => array(
-        'format' => 'inline',
-      ),
-      'teaser' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      'full' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      '4' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      '2' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      '3' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-      'token' => array(
-        'format' => 'default',
-        'exclude' => 0,
-      ),
-    ),
-    'widget_active' => '1',
-    'type' => 'content_taxonomy',
-    'required' => '0',
-    'multiple' => '0',
-    'module' => 'content_taxonomy',
-    'active' => '1',
-    'save_term_node' => 1,
-    'vid' => '48',
-    'parent' => '0',
-    'parent_php_code' => '',
-    'depth' => '',
-    'widget' => array(
-      'group_parent' => '0',
-      'show_depth' => 1,
-      'default_value' => array(
-        '0' => array(
-          'value' => '',
-        ),
-      ),
-      'default_value_php' => NULL,
-      'label' => 'Publish to Tobacco E-News',
-      'weight' => '24',
-      'description' => 'Submit this article to Tobacco E-News homepage?',
-      'type' => 'content_taxonomy_options',
-      'module' => 'content_taxonomy_options',
+      'label' => 'Home Page Placement',
+      'weight' => '7',
+      'description' => '',
+      'type' => 'optionwidgets_select',
+      'module' => 'optionwidgets',
     ),
   );
 
@@ -1462,7 +1466,7 @@ Show Author Info?',
     'field_name' => 'field_thumbnail_image',
     'type_name' => 'article',
     'display_settings' => array(
-      'weight' => '3',
+      'weight' => '2',
       'parent' => '',
       'label' => array(
         'format' => 'above',
@@ -1530,7 +1534,7 @@ Show Author Info?',
       'filefield_source_attach_mode' => NULL,
       'filefield_source_autocomplete' => NULL,
       'label' => 'Thumbnail Image',
-      'weight' => '3',
+      'weight' => '2',
       'description' => '',
       'type' => 'imagefield_widget',
       'module' => 'imagefield',
@@ -1541,27 +1545,27 @@ Show Author Info?',
   // Included for use with string extractors like potx.
   t('Article Spotlight');
   t('Author(s)');
-  t('Category Analysis Placement');
-  t('Category Placement');
+  t('Category Analysis Newsletter Placement');
+  t('Category Dnews Placement');
   t('Deck');
   t('Editorial Tags');
   t('Home Page Placement');
   t('Main Image');
   t('Main Image Credit');
-  t('Mobile Placement');
+  t('Mobile Dnews Placement');
   t('News Flash');
   t('Publication Source');
-  t('Publish to CSPedia Companies');
+  t('Publish to CSPedia News');
   t('Publish to CSPedia People');
   t('Publish to Tobacco E-News');
   t('Related Content');
   t('Related Multimedia');
   t('Retailer Focus');
-  t('Section');
   t('Show Author Info?');
   t('Supplier Focus');
   t('Teaser');
   t('Thumbnail Image');
+  t('Topic');
 
   return $fields;
 }
