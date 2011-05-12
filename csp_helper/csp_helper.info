@@ -1,0 +1,3 @@
+name = CSP Helper
+description = Provides basic functionality back-end changes for CSPnet.
+core = 6.x
