@@ -1,0 +1,3 @@
+<?php
+
+include_once('csp_home_page.features.inc');
