@@ -53,11 +53,7 @@ function op_article_fieldgroup_default_groups() {
       '1' => 'field_newssection',
       '2' => 'field_featured_retailers',
       '3' => 'field_featured_suppliers',
-      '4' => 'field_newsflashes',
-      '5' => 'field_cspediafeed_news',
-      '6' => 'field_cspediafeed_people',
-      '7' => 'field_feed_tobaccoenews',
-      '8' => 'field_articlespotlight',
+      '4' => 'field_articlespotlight',
     ),
   );
 
@@ -199,9 +195,7 @@ function op_article_fieldgroup_default_groups() {
       ),
     ),
     'weight' => '10',
-    'fields' => array(
-      '0' => 'field_category_analysisnews',
-    ),
+    'fields' => array(),
   );
 
   // Exported group: group_dnewsplacement
@@ -246,10 +240,7 @@ function op_article_fieldgroup_default_groups() {
       ),
     ),
     'weight' => '8',
-    'fields' => array(
-      '0' => 'field_category_dnews',
-      '1' => 'field_mobile_placement',
-    ),
+    'fields' => array(),
   );
 
   // Exported group: group_internal_tagging

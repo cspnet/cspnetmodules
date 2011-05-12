@@ -74,15 +74,14 @@ function op_article_strongarm() {
   $strongarm->name = 'content_extra_weights_article';
   $strongarm->value = array(
     'title' => '-5',
-    'body_field' => '0',
-    'revision_information' => '4',
-    'author' => '15',
-    'options' => '5',
-    'comment_settings' => '14',
+    'body_field' => '-1',
+    'revision_information' => '6',
+    'author' => '14',
+    'options' => '8',
+    'comment_settings' => '12',
     'menu' => '-3',
-    'taxonomy' => '-2',
-    'path' => '13',
-    'scheduler_settings' => '9',
+    'path' => '11',
+    'workflow' => '9',
   );
 
   $export['content_extra_weights_article'] = $strongarm;
