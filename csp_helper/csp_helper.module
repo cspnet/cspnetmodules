@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * Implementation of hook_form_alter().
+ */
+function csp_helper_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'decisions_selection_voting_form') {
+    if ($form_state['clicked_button']['#value'] == 'Results' || $form['node']['#value']->vote) {
+      $form['#submit'] = array('csp_helper_descisions_submit');
+    }
+    $form['vote']['#value'] = t('Submit');
+    $form['results'] = array(
+      '#type' => 'submit',
+      '#value' => t('Results'),
+    );
+  }
+}
+
+/**
+ * Modifications to the decision module voting form.
+ */
+function csp_helper_descisions_submit($form, &$form_state) {
+  if ($form_state['clicked_button']['#value'] == 'Results') {
+    $form_state['redirect'] = "node/{$form['node']['#value']->nid}";
+  }
+  else if ($form['node']['#value']->vote) {
+    drupal_set_message(t('You have already voted on this poll.'));
+    $form_state['redirect'] = "node/{$form['node']['#value']->nid}";
+  }
+}
